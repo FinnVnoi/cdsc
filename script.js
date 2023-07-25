@@ -191,8 +191,8 @@ audio.addEventListener('ended', playRandomMusic);
   // Lưu số biến của lá bài vào mảng
   const cardVariableArray = selectedCards.map(card => cardVariables[card]);
 
-  // Chọn ngẫu nhiên 3 lá bài từ các lá đã chọn
-  hiddenCards = getRandomCards(selectedCards, 3, cardVariableArray);
+  // Chọn ngẫu nhiên 4 lá bài từ các lá đã chọn
+  hiddenCards = getRandomCards(selectedCards, 4, cardVariableArray);
 
   renderHiddenCards();
 
