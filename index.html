@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title id="pageTitle">Power by FinnVnoi</title>
+  <script>
+    window.onload = function() {
+      var pageTitle = document.getElementById('pageTitle');
+
+      setInterval(function() {
+        pageTitle.textContent = pageTitle.textContent === 'Chế độ siêu cấp' ? 'UPDATED 25/7/2023' : 'Chế độ siêu cấp';
+      }, 3000);
+    };
+  </script>
+  <style>
+    .image-container {
+      display: flex;
+      justify-content: center;
+      border-radius: 5px;
+    }
+
+    #fullscreenButton {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 5px;
+      background-color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+
+    .image-container img {
+      margin: auto;
+    }
+
+    body {
+      background-image: url(images/background.jpg);
+      background-size: center;
+      position: relative;
+    }
+
+    .star {
+      font-size: 50px;
+      color: gold;
+    }
+
+    #startButton {
+      width: 1000px;
+      height: 100px;
+      border-radius: 5px;
+      font-size: 24px;
+      padding: 10px 20px;
+    }
+
+    #addCardButton {
+      font-size: 24px;
+      display: flex;
+      border-radius: 5px;
+      padding: 10px 20px;
+      margin: 55px;
+    }
+
+    .hidden-cards-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .buttons-container {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .card:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url(images/card_back.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .card {
+      width: 250px;
+      height: 365px;
+      margin: 25px;
+      border-radius: 5px;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      perspective: 1000px;
+      display: inline-block;
+      position: relative;
+    }
+
+    .card-container {
+      width: 250px;
+      height: 365px;
+      margin: 25px;
+      perspective: 1000px;
+      display: inline-block;
+      position: relative;
+      justify-content: center;
+    }
+
+    #removedCards {
+      position: fixed;
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+      background-color: #fff;
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    #removedCards div {
+      margin-bottom: 5px;
+      cursor: pointer;
+    }
+
+    #removedCards .removed-card-item {
+      width: 100px;
+      height: 150px;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      cursor: pointer;
+      #audioControlButton {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  padding: 10px;
+  font-size: 16px;
+  background-color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+    }
+  </style>
+  <!-- Thêm icon trang web -->
+  <link rel="icon" href="images/finncolor.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="images/finncolor.ico" type="image/x-icon">
+</head>
+<body>
+  <button id="audioControlButton" onclick="toggleAudio()">Tắt tiếng</button>
+  <div class="image-container">
+    <img src="images/meta.jpg" alt="Hình ảnh đầu trang" width="1154" height="431">
+  </div>
+  <div class="fullscreen-button" id="fullscreenButton">&#x26F6;</div>
+  <div id="cardContainer"></div>
+  <div class="image-container">
+    <button id="startButton" onclick="startGame()">Bắt đầu</button>
+  </div>
+  <div id="gameContainer" style="display: none;">
+    <div id="hiddenCards"></div>
+    <div id="selectedCards"></div>
+    <button id="addCardButton" onclick="addCard()">Thêm lá bài</button>
+  </div>
+  <div id="removedCards"></div>
+  <script src="script.js"></script>
+</body>
+</html>
