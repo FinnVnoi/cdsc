@@ -23,7 +23,7 @@ let currentPage = 1;
 // Tạo các lá bài trên trang chủ
 document.getElementById("startButton").disabled = true;
 const cardContainer = document.getElementById("cardContainer");
-for (let i = 1; i <= 122; i++) {
+for (let i = 1; i <= 136; i++) {
   const card = document.createElement("div");
   card.className = "card";
   card.style.backgroundImage = `url(images/card${i}.jpg)`;
